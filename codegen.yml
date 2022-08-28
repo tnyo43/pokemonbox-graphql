@@ -1,0 +1,19 @@
+overwrite: true
+schema: ${NEXT_PUBLIC_CONTENT_API_URL}
+documents: "src/**/*.graphql"
+generates:
+  src/generated/hygraph-schema.ts:
+    plugins:
+      - typescript
+  src/:
+    preset: near-operation-file
+    presetConfig:
+      extension: .generated.ts
+      baseTypesPath: ../src/generated/hygraph-schema.ts
+    plugins:
+      - "typescript-operations"
+      - "typescript-urql"
+    config:
+      immutableTypes: true
+      nonOptionalTypename: true
+      documents: "src/**/*.graphql"
