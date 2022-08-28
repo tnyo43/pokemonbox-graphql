@@ -4,5 +4,6 @@ query pokedexes {
     name
     no
     image
+    type
   }
 }
