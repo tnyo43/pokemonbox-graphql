@@ -1,0 +1,8 @@
+query pokedexes {
+  pokedexes {
+    id
+    name
+    no
+    image
+  }
+}
